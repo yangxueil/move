@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no,
+     initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+<!--头部-->
+<header>
+    <span></span><span></span><span></span>
+</header>
+<div class="con">
+    <ul class="list">
+        <li>
+            <p><a href="">首页</a> > <a href="">我的</a> > <a href="">注册</a></p>
+        </li>
+        <li>
+            <input type="text" placeholder="请输入手机号" id="phone" pattern="^1[3578][0-9]{9}$"  value="13809999993"> <a class="get">获取验证码</a>
+        </li>
+        <li><input type="password" placeholder="请输入短信中验证码" ></li>
+        <li><input type="password" placeholder="请设置密码" id="pwd" pattern="^\d{4}$" value="111111"></li>
+        <li><input type="password" placeholder="请确认密码" id="repass" pattern="^\d{4}$" value="111111"></li>
+    </ul>
+</div>
+<div class="lo" ><button id="btn">立即注册</button></div>
+<script src="../js/rem.js"></script>
+<script src="../js/zepto.js"></script>
+<script>
+    $('#btn').tap(function(){
+        if($('#pwd').val()!=$('#repass').val()){
+            alert('密码不一致')
+        }else{
+        $.ajax({
+            url: 'https://www.apiopen.top/createUser',
+            // type:'post',
+            data: {
+                key: '00d91e8e0cca2b76f515926a36db68f5',
+                phone: $('#phone').val(),
+                passwd: $('#pwd').val()
+            },
+            success: function (data) {
+                alert(data.msg);
+                if(data.code===200){
+                    setTimeout(function () {
+                        window.location.href = 'login.html';
+                    }, 1000);
+                }
+            },
+            error: function (err) {
+                // throw err;
+            }
+        });
+        }
+    });
+var min=60;
+var timer=null;
+$('.get').tap(function(e){
+    e=e||event;
+    e.preventDefault();
+    clearInterval(timer);
+    timer=setInterval(re,1000)
+});
+function re(){
+    min = --min;
+    if(min>0){
+        $('.get').html('（' + min + '秒）重发')
+    }else{
+        min=60;
+        clearInterval(timer);
+        $('.get').html('重获验证码')
+    }
+}
+</script>
+</body>
+</html>

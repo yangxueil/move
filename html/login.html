@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no,
+     initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+<!--头部-->
+<header>
+    <span></span><span id="hh"></span><span></span>
+</header>
+<div class="con">
+    <p><a href="">首页</a> > <a href="">我的</a> > <a href="">登录</a></p>
+</div>
+<section>
+    <ul class="list">
+        <li class="active one" >普通登录</li>
+        <li class="two">验证码快捷登录</li>
+    </ul>
+    <div class="sec">
+    <div class="sec-l" >
+        <p><input type="text" placeholder="请输入手机号"> <a class="get">获取验证码</a></p>
+        <p><input type="text" placeholder="请输入短信中验证码"></p>
+
+    </div>
+    <div class="sec-r" style="display: none">
+        <p><input type="text" placeholder="请输入手机号" id="phone" pattern="^1[3578][0-9]{9}$"> </p>
+        <p><input type="text" placeholder="请输入密码" id="pwd" pattern="^\d{4}$"></p>
+    </div>
+    </div>
+</section>
+<div class="lo"><button>立即登录</button></div>
+<script src="../js/rem.js"></script>
+<script src="../js/zepto.js"></script>
+<script>
+    $('#btn').tap(function(){
+        $.ajax({
+            url: 'https://www.apiopen.top/login',
+            // type:'post',
+            data: {
+                key: '00d91e8e0cca2b76f515926a36db68f5',
+                phone: $('#phone').val(),
+                passwd: $('#pwd').val()
+            },
+            success: function (data) {
+                alert(data.msg);
+                if(data.code===200){
+                    setTimeout(function () {
+                        window.location.href = 'index.html';
+                    }, 1000);
+                }
+            },
+            error: function (err) {
+                throw err;
+            }
+        });
+    });
+
+$('.one').tap(function(){
+    $('.sec-l').show();
+    $('.sec-r').hide();
+    $('.one').addClass('active');
+    $('.two').removeClass('active');
+});
+$('.two').tap(function(){
+    $('.two').addClass('active');
+    $('.one').removeClass('active');
+    $('.sec-r').show();
+    $('.sec-l').hide();
+});
+
+    var min=60;
+    var timer=null;
+    $('.get').tap(function(e){
+        e=e||event;
+        e.preventDefault();
+        clearInterval(timer);
+        timer=setInterval(re,1000)
+    });
+    function re(){
+        min = --min;
+        if(min>0){
+            $('.get').html('（' + min + '秒）重发')
+        }else{
+            min=60;
+            clearInterval(timer);
+            $('.get').html('重获验证码')
+        }
+    }
+</script>
+<script>
+    $('#hh').tap(function(){
+        window.location.href='myLogin.html'
+    })
+</script>
+</body>
+</html>

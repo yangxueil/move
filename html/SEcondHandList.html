@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二手房列表页</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="../css/secondlist.css">
+    <style>
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<div class="hide"></div>
+<body>
+<!--头部-->
+<header>
+    <span></span><span></span><span></span>
+</header>
+<!--搜索框-->
+<section class="sec">
+    <input type="text" placeholder="请输入小区名或商圈名">
+    <span class="left">|</span><span class="left"></span>
+</section>
+<!--选择-->
+<section class="introduce">
+    <!--遮罩层-->
+        <div class="int-box">
+            <ul class="listt">
+                <li><h2><a >区域</a></h2><span></span></li>
+                <li><h2><a >房价</a></h2><span></span></li>
+                <li><h2><a >房型</a></h2><span></span></li>
+                <li><h2><a >更多</a></h2><span></span></li>
+            </ul>
+        </div>
+    <!--二级菜单-->
+    <section id="item" style="display: none">
+        <ul class="item-box">
+            <li class="active">
+                <h2 ><a >区域</a></h2><span></span>
+            </li>
+            <li>
+                <h2><a >房价</a></h2><span></span>
+            </li>
+            <li>
+                <h2><a >房型</a></h2><span></span>
+            </li>
+            <li>
+                <h2><a >更多</a></h2><span></span>
+            </li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="item-one">
+            <li class="area " style="display: block">
+                <div class="left area-l">
+                    <h2>区域</h2>
+                    <h2>地铁</h2>
+                </div>
+                <div class="left area-r">
+                    <p><a>附近</a><a class="self">不限</a></p>
+                    <p><a>不限</a><a class="self">安贞</a></p>
+                    <p><a class="self">朝阳</a><a >奥林匹克公园</a></p>
+                    <p><a>昌平</a><a >北工大</a></p>
+                    <p><a>丰台</a><a >北苑</a></p>
+                    <p><a>石景山</a><a >CBD</a></p>
+                </div>
+            </li>
+            <li class="price">
+                <p><a href="">不限</a></p>
+                <p><a href="">100万以下</a></p>
+                <p><a href="">100万-150万</a></p>
+                <p><a href="">150万-200万</a></p>
+                <p><a href="">200万-250万</a></p>
+                <p><a href="">250万-300万</a></p>
+                <p><a href="">自定义价格</a></p>
+            </li>
+            <li class="house">
+                <p><a href="">不限</a></p>
+                <p>
+                    <a href="">1室</a> <input type="checkbox" checked>
+                </p>
+                <p><a href="">2室</a><input type="checkbox"></p>
+                <p><a href="">3室</a><input type="checkbox"></p>
+                <p><a href="">4室</a><input type="checkbox"></p>
+                <p><a href="">5室</a><input type="checkbox"></p>
+
+            </li>
+            <li class="more">
+                <ul class="mo-list" id="item1">
+                    <li>
+                        <h2>区域</h2>
+                        <ul class="oo">
+                            <li>南</li>
+                            <li>南北</li>
+                            <li>西</li>
+                            <li>西南</li>
+                            <li>东</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>面积(平方)</h2>
+                        <ul class="oo">
+                            <li>50以下</li>
+                            <li>50-70</li>
+                            <li>70-100</li>
+                            <li>100-150</li>
+                            <li>150-200</li>
+                            <li>200-250</li>
+                            <li>250-300</li>
+                            <li>300-350</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>标签</h2>
+                        <ul class="oo">
+                            <li>学区房</li>
+                            <li>地铁房</li>
+                            <li>不限购</li>
+                            <li>满两年</li>
+                            <li>降价</li>
+                            <li>新上</li>
+                            <li>独家</li>
+                            <li>满五送一</li>
+                            <li>有钥匙</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>楼龄</h2>
+                        <ul class="oo">
+                            <li>5年以内</li>
+                            <li>10年以内</li>
+                            <li>10-20年</li>
+                            <li>20年以上</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </section>
+</section>
+
+<!--列表-->
+<section class="list-box">
+<ul class="list">
+  <li>
+      <div class="li-l left">
+          <img src="../img/SecondHandList/img3.png" width="80" height="80" />
+      </div>
+      <div class="li-r left">
+          <h2>西便门外大街2室1厅89平</h2>
+          <p>南北 高楼层/6层</p>
+          <p>签约价格:13244元/平 <strong>1105万</strong></p>
+          <p>签约日期:2015年11月10日</p>
+      </div>
+  </li>
+    <li>
+        <div class="li-l left">
+            <img src="../img/SecondHandList/img2.png" width="80" height="80" />
+        </div>
+        <div class="li-r left">
+            <h2>西便门外大街2室1厅89平</h2>
+            <p>南北 高楼层/6层</p>
+            <p>签约价格:13244元/平 <strong>1105万</strong></p>
+            <p>签约日期:2015年11月10日</p>
+        </div>
+    </li>
+    <li>
+        <div class="li-l left">
+            <img src="../img/SecondHandList/img4.png" width="80" height="80" />
+        </div>
+        <div class="li-r left">
+            <h2>西便门外大街2室1厅89平</h2>
+            <p>南北 高楼层/6层</p>
+            <p>签约价格:13244元/平 <strong>1105万</strong></p>
+            <p>签约日期:2015年11月10日</p>
+        </div>
+    </li>
+    <li>
+        <div class="li-l left">
+            <img src="../img/SecondHandList/img5.png" width="80" height="80" />
+        </div>
+        <div class="li-r left">
+            <h2>西便门外大街2室1厅89平</h2>
+            <p>南北 高楼层/6层</p>
+            <p>签约价格:13244元/平 <strong>1105万</strong></p>
+            <p>签约日期:2015年11月10日</p>
+        </div>
+    </li>
+</ul>
+</section>
+<!--底部-->
+<footer>
+    <div class="foo-box">
+        <p class="text">北京找房无忧 > <a href="index.html" style="color: #8f8f8f">首页</a></p>
+        <ul class="foo-list">
+            <li>
+                <div class="img left"></div>
+                <div class="con left">
+                    <p>iPhone</p>
+                    <p>客户端</p>
+                </div>
+            </li>
+            <li>
+                <div class="img1 left"></div>
+                <div class="con left">
+                    <p>Android</p>
+                    <p>客户端</p>
+                </div>
+            </li>
+        </ul>
+        <p class="center">北京找房无忧房地产经纪公司</p>
+        <p class="center a">网络经营许可证京ICP备20160812号</p>
+    </div>
+</footer>
+<script src="../js/rem.js"></script>
+<script src="../js/zepto.js"></script>
+<script src="../js/list.js"></script>
+</body>
+</html>

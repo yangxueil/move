@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-size: 100px;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+/*头部*/
+header{
+    width: 100%;
+    height: .40rem;
+    background: #ff8a00;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+header>span{
+    display: block;
+    float: left;
+    position: absolute;
+}
+header>span:nth-child(1){
+    width: 1rem;
+    height: .30rem;
+    top: .05rem;
+    left: .35rem;
+    background: url("../img/index/logo.jpg")center center no-repeat;
+    background-size: 100% 100%;
+}
+header>span:nth-child(2){
+    width: .25rem;
+    height: .30rem;
+    top: .05rem;
+    left: 2.17rem;
+    background: url("../img/index/my.jpg")center center no-repeat;
+    background-size: 100% 100%;
+}
+header>span:nth-child(3){
+    width: .25rem;
+    height: .30rem;
+    top: .05rem;
+    left: 2.64rem;
+    background: url("../img/index/xiazai.jpg")center center no-repeat;
+    background-size: 100% 100%;
+}
+h2{
+    height: .4rem;
+    line-height: .4rem;
+    background: #fff;
+    padding-left: .15rem;
+}
+h2>a,h2{
+    text-decoration: none;
+    font-size: .12rem;
+    color: black;
+}
+h2>a:nth-child(2){
+    color: #474747;
+}
+.bg{
+    width: 100%;
+    height: 1.38rem;
+    position: relative;
+}
+.bg>img{
+    width: 100%;
+    height: 100%;
+}
+.bg>.user{
+    width: .54rem;
+    height: .54rem;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url("../img/my/urse2.png")center center no-repeat;
+    background-size:100% 100% ;
+}
+.bg>p{
+    position: absolute;
+    color: #fff;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .12rem;
+}
+.con{
+    width: 100%;
+    background: #fff;
+    font-size: .12rem;
+}
+.container{
+    margin: 0 .2rem;
+}
+.container>ul{
+    list-style: none;
+}
+.container>ul>li{
+    font-size: .12rem;
+    height: .48rem;
+    line-height: .48rem;
+    background: url("../img/my/right.png") right center no-repeat;
+    background-size: .07rem .14rem;
+    border-bottom: .01rem solid #ccc;
+}
+.container>ul>li>a{
+    text-decoration: none;
+    color: #666666;
+    font-size: .12rem;
+}
+.btn{
+    font-size: .14rem;
+    color: #ff8a00;
+    margin: .15rem .1rem 0 .1rem;
+    border: 1px solid #ccc;
+    text-align: center;
+    height: .4rem;
+    line-height: .4rem;
+    box-sizing: border-box;
+    background: #fff;
+}

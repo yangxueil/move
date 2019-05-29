@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我关注的房源</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no,
+     initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/myhouse.css">
+</head>
+<body>
+<!--头部-->
+<header>
+    <span></span><span id="hh"></span><span></span>
+</header>
+<div class="con">
+    <p><a href="index.html">首页</a> > <a href="">我的</a> > <a href="">我关注的小区</a></p>
+</div>
+<ul class="list">
+    <!--<li>-->
+        <!--<div class="li-box">-->
+            <!--<div class="li-l left">-->
+                <!--<img src="../img/my/img1.png" /></div>-->
+            <!--<div class="li-r left">-->
+                <!--<h4>辉煌国际</h4>-->
+                <!--<p>昌平区-回龙观</p>-->
+                <!--<p>2007年建成 <strong>1478万/元</strong></p>-->
+                <!--<p>板塔结构</p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</li>-->
+</ul>
+<script src="../js/zepto.js"></script>
+<script>
+    $.ajax({
+        url:'../js/myhouse.json',
+        success:function(data){
+            var str='';
+            for(var i=0;i<data.length;i++) {
+                str += '<li><div class="li-box"><div class="li-l left"><img src="' +data[i].img + '" /></div><div class="li-r left"><h4>' + data[i].h2 + '</h4><p>' + data[i].text1 + '</p><p>' + data[i].text2 + ' <strong>' + data[i].strong + '</strong></p><p>' + data[i].text3 + '</p></div></div></li>';
+                $(".list").html(str);
+            }
+        },
+        error:function(err){
+            throw err;
+        }
+    })
+</script>
+<script>
+    $('#hh').tap(function(){
+        window.location.href='myLogin.html'
+    })
+</script>
+</body>
+</html>
